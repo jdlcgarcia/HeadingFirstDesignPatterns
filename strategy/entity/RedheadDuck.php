@@ -1,5 +1,6 @@
 <?php
 
+namespace SimUDuck\Entity;
 
 class RedheadDuck extends Duck
 {

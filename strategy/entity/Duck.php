@@ -1,5 +1,6 @@
 <?php
 
+namespace SimUDuck\Entity;
 
 abstract class Duck
 {
