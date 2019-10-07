@@ -2,21 +2,30 @@
 
 namespace SimUDuck\Entity;
 
+use SimUDuck\Behavior\FlyBehavior;
+use SimUDuck\Behavior\QuackBehavior;
+
 abstract class Duck
 {
-    public function quack()
+    /** @var QuackBehavior */
+    protected $quackBehavior;
+
+    /** @var FlyBehavior */
+    protected $flyBehavior;
+
+    public function performQuack()
     {
-        return "quack";
+        return $this->quackBehavior->quack();
     }
 
     public function swim()
     {
-        return "swim";
+        return "All ducks float, even decoys!";
     }
 
-    public function fly()
+    public function performFly()
     {
-        return "fly away";
+        return $this->flyBehavior->fly();
     }
 
     abstract public function display();

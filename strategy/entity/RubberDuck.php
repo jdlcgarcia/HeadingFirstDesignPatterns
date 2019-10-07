@@ -4,21 +4,22 @@
 namespace SimUDuck\Entity;
 
 
+use SimUDuck\Behavior\FlyNoWay;
+use SimUDuck\Behavior\Squeak;
+
 class RubberDuck extends Duck
 {
+    /**
+     * RubberDuck constructor.
+     */
+    public function __construct()
+    {
+        $this->quackBehavior = new Squeak();
+        $this->flyBehavior = new FlyNoWay();
+    }
 
     public function display()
     {
-        return "looks like a rubber duck";
-    }
-
-    public function quack()
-    {
-        return $this->squeak();
-    }
-
-    private function squeak()
-    {
-        return "squeak";
+        return "I'm a rubber duck";
     }
 }
