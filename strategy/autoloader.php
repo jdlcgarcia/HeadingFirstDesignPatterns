@@ -11,4 +11,5 @@ include_once "behaviour/Squeak.php";
 include_once "behaviour/FlyNoWay.php";
 include_once "entity/RubberDuck.php";
 include_once "behaviour/MuteQuack.php";
+include_once "behaviour/FlyRocketPowered.php";
 include_once "entity/ModelDuck.php";
