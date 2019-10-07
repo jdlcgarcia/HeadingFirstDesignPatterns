@@ -29,4 +29,22 @@ abstract class Duck
     }
 
     abstract public function display();
+
+    /**
+     * @param QuackBehavior $quackBehavior
+     */
+    public function setQuackBehavior($quackBehavior)
+    {
+        $this->quackBehavior = $quackBehavior;
+    }
+
+    /**
+     * @param FlyBehavior $flyBehavior
+     */
+    public function setFlyBehavior($flyBehavior)
+    {
+        $this->flyBehavior = $flyBehavior;
+    }
+
+
 }

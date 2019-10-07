@@ -1,6 +1,6 @@
 <?php
 
-use SimUDuck\Entity\MallardDuck;
+use SimUDuck\Behavior\FlyRocketPowered;use SimUDuck\Entity\MallardDuck;
 use SimUDuck\Entity\ModelDuck;
 use SimUDuck\Entity\RedheadDuck;
 use SimUDuck\Entity\RubberDuck;
@@ -36,6 +36,12 @@ $model = new ModelDuck();
     <?php echo $rubber->display(); ?>, You can hear me say "<?php echo $rubber->performQuack(); ?>" but also, <?php echo $rubber->performFly(); ?>. <?php echo $rubber->swim(); ?>
 </p>
 <h2>Model Duck</h2>
+<p>
+    <?php echo $model->display(); ?>, You can hear me say "<?php echo $model->performQuack(); ?>" but also, <?php echo $model->performFly(); ?>. <?php echo $model->swim(); ?>
+</p>
+<h3>But this model duck, after a few "improvements"...</h3>
+<?php $model->setFlyBehavior(new FlyRocketPowered()); ?>
+<h2>Mecha Model Duck</h2>
 <p>
     <?php echo $model->display(); ?>, You can hear me say "<?php echo $model->performQuack(); ?>" but also, <?php echo $model->performFly(); ?>. <?php echo $model->swim(); ?>
 </p>
