@@ -1,6 +1,8 @@
 <?php
 
-use SimUDuck\Behavior\FlyRocketPowered;use SimUDuck\Entity\MallardDuck;
+use SimUDuck\Behavior\FlyRocketPowered;
+use SimUDuck\Entity\DuckCall;
+use SimUDuck\Entity\MallardDuck;
 use SimUDuck\Entity\ModelDuck;
 use SimUDuck\Entity\RedheadDuck;
 use SimUDuck\Entity\RubberDuck;
@@ -11,6 +13,7 @@ $mallard = new MallardDuck();
 $redhead = new RedheadDuck();
 $rubber = new RubberDuck();
 $model = new ModelDuck();
+$duckCall = new DuckCall();
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,5 +48,7 @@ $model = new ModelDuck();
 <p>
     <?php echo $model->display(); ?>, You can hear me say "<?php echo $model->performQuack(); ?>" but also, <?php echo $model->performFly(); ?>. <?php echo $model->swim(); ?>
 </p>
+<h2>Duck Call</h2>
+<p>I'm no duck, but you can hear me say "<?php echo $duckCall->performQuack(); ?>"</p>
 </body>
 </html>
