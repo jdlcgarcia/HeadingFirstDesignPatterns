@@ -10,7 +10,7 @@
 <body>
     <h1>Design Patterns</h1>
     <ul>
-
+        <li><a href="strategy/index.php">Strategy Pattern</a></li>
     </ul>
 </body>
 </html>
