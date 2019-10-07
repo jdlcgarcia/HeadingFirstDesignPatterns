@@ -4,10 +4,7 @@ use SimUDuck\Entity\MallardDuck;
 use SimUDuck\Entity\RedheadDuck;
 use SimUDuck\Entity\RubberDuck;
 
-include "entity/Duck.php";
-include "entity/MallardDuck.php";
-include "entity/RedheadDuck.php";
-include "entity/RubberDuck.php";
+include "autoloader.php";
 
 $mallard = new MallardDuck();
 $redhead = new RedheadDuck();
@@ -26,15 +23,15 @@ $rubber = new RubberDuck();
 <h1>SimUDuck</h1>
 <h2>Mallard Duck</h2>
 <p>
-    It <?php echo $mallard->display(); ?>, it <?php echo $mallard->quack(); ?>s but also, it <?php echo $mallard->swim(); ?>s and maybe it would <?php echo $mallard->fly(); ?>
+    <?php echo $mallard->display(); ?>, You can hear me say "<?php echo $mallard->performQuack(); ?>" but also, <?php echo $mallard->performFly(); ?>. <?php echo $mallard->swim(); ?>
 </p>
 <h2>Redhead Duck</h2>
 <p>
-    It <?php echo $redhead->display(); ?>, it <?php echo $redhead->quack(); ?>s but also, it <?php echo $redhead->swim(); ?>s and maybe it would <?php echo $redhead->fly(); ?>
+    <?php echo $redhead->display(); ?>, You can hear me say "<?php echo $redhead->performQuack(); ?>" but also, <?php echo $redhead->performFly(); ?>. <?php echo $redhead->swim(); ?>
 </p>
 <h2>Rubber Duck</h2>
 <p>
-    It <?php echo $rubber->display(); ?>, it <?php echo $rubber->quack(); ?>s but also, it <?php echo $rubber->swim(); ?>s and maybe it would <?php echo $rubber->fly(); ?>
+    <?php echo $rubber->display(); ?>, You can hear me say "<?php echo $rubber->performQuack(); ?>" but also, <?php echo $rubber->performFly(); ?>. <?php echo $rubber->swim(); ?>
 </p>
 </body>
 </html>
