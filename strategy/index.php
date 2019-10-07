@@ -24,11 +24,11 @@ $redhead = new RedheadDuck();
 <h1>SimUDuck</h1>
 <h2>Mallard Duck</h2>
 <p>
-    It <?php echo $mallard->display(); ?>, it <?php echo $mallard->quack(); ?>s but also, it <?php echo $mallard->swim(); ?>s
+    It <?php echo $mallard->display(); ?>, it <?php echo $mallard->quack(); ?>s but also, it <?php echo $mallard->swim(); ?>s and maybe it would <?php echo $mallard->fly(); ?>
 </p>
 <h2>Redhead Duck</h2>
 <p>
-    It <?php echo $redhead->display(); ?>, it <?php echo $redhead->quack(); ?>s but also, it <?php echo $redhead->swim(); ?>s
+    It <?php echo $redhead->display(); ?>, it <?php echo $redhead->quack(); ?>s but also, it <?php echo $redhead->swim(); ?>s and maybe it would <?php echo $redhead->fly(); ?>
 </p>
 
 </body>
