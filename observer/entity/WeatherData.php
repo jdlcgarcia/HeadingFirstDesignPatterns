@@ -1,8 +1,11 @@
 <?php
+namespace WeatherORama\Entity;
 
-
-class WeatherData
+class WeatherData implements Subject
 {
+    /** @var Observer[] */
+    private $observerList;
+
     /** @var float */
     private $temperature;
 
@@ -13,31 +16,84 @@ class WeatherData
     private $pressure;
 
     /**
-     * @return float
+     * WeatherData constructor.
      */
-    private function getTemperature()
+    public function __construct()
     {
-        return $this->temperature;
+        $this->observerList = [];
     }
+
+//
+//    /**
+//     * @return float
+//     */
+//    private function getTemperature()
+//    {
+//        return $this->temperature;
+//    }
+//
+//    /**
+//     * @return float
+//     */
+//    private function getHumidity()
+//    {
+//        return $this->humidity;
+//    }
+//
+//    /**
+//     * @return float
+//     */
+//    private function getPressure()
+//    {
+//        return $this->pressure;
+//    }
 
     /**
-     * @return float
+     * Function provided to update all the screens
      */
-    private function getHumidity()
-    {
-        return $this->humidity;
-    }
-
-    /**
-     * @return float
-     */
-    private function getPressure()
-    {
-        return $this->pressure;
-    }
-
     public function measurementsChanged()
     {
-        /* Your code goes here */
+        $this->notifyObservers();
+    }
+
+    /**
+     * @param Observer $o
+     */
+    public function registerObserver(Observer $o)
+    {
+        $this->observerList[] = $o;
+    }
+
+    /**
+     * @param Observer $o
+     */
+    public function removeObserver(Observer $o)
+    {
+        foreach($this->observerList as $key => $observer) {
+            if ($observer == $o) {
+                unset($this->observerList[$key]);
+            }
+        }
+    }
+
+    public function notifyObservers()
+    {
+        foreach($this->observerList as $observer) {
+            $observer->update($this->temperature, $this->humidity, $this->pressure);
+        }
+    }
+
+    /**
+     * Simulation of receiving data
+     * @param $temperature
+     * @param $humidity
+     * @param $pressure
+     */
+    public function setMeasurements($temperature, $humidity, $pressure)
+    {
+        $this->temperature = $temperature;
+        $this->humidity = $humidity;
+        $this->pressure = $pressure;
+        $this->measurementsChanged();
     }
 }
