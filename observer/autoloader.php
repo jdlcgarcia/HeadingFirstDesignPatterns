@@ -7,3 +7,4 @@ include_once "entity/DisplayElement.php";
 include_once "entity/CurrentConditionsDisplay.php";
 include_once "entity/StatisticsDisplay.php";
 include_once "entity/ForecastDisplay.php";
+include_once "entity/HeatIndexDisplay.php";
